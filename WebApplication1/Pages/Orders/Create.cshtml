@@ -1,0 +1,79 @@
+﻿@page
+@model WebApplication1.Pages.Orders.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Order.Time" class="control-label"></label>
+                <input asp-for="Order.Time" class="form-control" />
+                <span asp-validation-for="Order.Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.Date" class="control-label"></label>
+                <input asp-for="Order.Date" class="form-control" />
+                <span asp-validation-for="Order.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.check" class="control-label"></label>
+                <input asp-for="Order.check" class="form-control" />
+                <span asp-validation-for="Order.check" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.Cost" class="control-label"></label>
+                <input asp-for="Order.Cost" class="form-control" />
+                <span asp-validation-for="Order.Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.FGS_employer" class="control-label"></label>
+                <input asp-for="Order.FGS_employer" class="form-control" />
+                <span asp-validation-for="Order.FGS_employer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.Telefon" class="control-label"></label>
+                <input asp-for="Order.Telefon" class="form-control" />
+                <span asp-validation-for="Order.Telefon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.dish_1ID" class="control-label"></label>
+                <input asp-for="Order.dish_1ID" class="form-control" />
+                <span asp-validation-for="Order.dish_1ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.dish_2ID" class="control-label"></label>
+                <input asp-for="Order.dish_2ID" class="form-control" />
+                <span asp-validation-for="Order.dish_2ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.dish_3ID" class="control-label"></label>
+                <input asp-for="Order.dish_3ID" class="form-control" />
+                <span asp-validation-for="Order.dish_3ID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.employeesID" class="control-label"></label>
+                <input asp-for="Order.employeesID" class="form-control" />
+                <span asp-validation-for="Order.employeesID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

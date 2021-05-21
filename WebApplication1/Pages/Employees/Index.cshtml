@@ -1,0 +1,72 @@
+﻿@page
+@model WebApplication1.Pages.Employees.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].FGS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Old)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].Pasport)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Employee[0].PositionsID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Employee) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FGS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Old)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pasport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PositionsID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

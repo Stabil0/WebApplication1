@@ -1,0 +1,84 @@
+﻿@page
+@model WebApplication1.Pages.Menus.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Menu[0].Volume_Ingredient_1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Menu[0].Cooking_time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Menu[0].Name_dish)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Menu[0].Volume_Ingredient_2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Menu[0].Volume_Ingredient_3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Menu[0].Cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Menu[0].Ingredient_1ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Menu[0].Ingredient_2ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Menu[0].Ingredient_3ID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Menu) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Volume_Ingredient_1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cooking_time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name_dish)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Volume_Ingredient_2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Volume_Ingredient_3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ingredient_1ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ingredient_2ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ingredient_3ID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
